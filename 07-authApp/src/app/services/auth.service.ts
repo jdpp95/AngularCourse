@@ -13,7 +13,7 @@ export class AuthService {
   auth0Client$ = (from(
     createAuth0Client({
       domain: "dev-7schy4vg.auth0.com",
-      client_id: "KiBD4hdLJxZMfpeiNxIO30wBqGyX1wCR",
+      client_id: "?",
       redirect_uri: `${window.location.origin}`
     })
   ) as Observable<Auth0Client>).pipe(

@@ -1,0 +1,18 @@
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" [src]="movie.posterPath">
+        </div>
+        <div class="col-md-8">
+            <img class="img-fluid  rounded mx-auto d-block mb-3" [src]="movie.backdropPath">
+            <h1 class="text-center mb-3">{{movie.title}}</h1>
+            {{movie.overview}}
+            <br>
+            <button class="btn btn-info mt-3"> &lt;- Regresar</button>
+        </div>
+        <div class="col-md-4">
+            
+        </div>
+    </div>
+    
+</div>

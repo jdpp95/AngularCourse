@@ -1,0 +1,36 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="btn-group-vertical btn-block">
+                <button 
+                    class="btn btn-danger mt-2" 
+                    (click)="onOptionSelected(NOW_PLAYING)"
+                    [ngClass]="{'btn-outline-danger' : optionSelected !== NOW_PLAYING,
+                                'btn-danger' : optionSelected === NOW_PLAYING}">
+                        Now playing
+                </button>
+                <button 
+                    class="btn btn-danger mt-2" 
+                    (click)="onOptionSelected(MOST_POPULAR)"
+                    [ngClass]="{'btn-outline-danger' : optionSelected !== MOST_POPULAR,
+                                'btn-danger' : optionSelected === MOST_POPULAR}">
+                        Most popular movies
+                </button>
+                <button 
+                    class="btn btn-danger mt-2" 
+                    (click)="onOptionSelected(UPCOMING_MOVIES)"
+                    [ngClass]="{'btn-outline-danger' : optionSelected !== UPCOMING_MOVIES,
+                                'btn-danger' : optionSelected === UPCOMING_MOVIES}">
+                        Upcoming movies
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <h1 class="mb-4 text-danger">{{title}}</h1>
+            <div class="card-columns text-dark">
+                <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
+            </div>
+        </div>
+    </div>
+</div>

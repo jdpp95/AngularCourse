@@ -1,0 +1,8 @@
+
+    <div class="card" (click)="viewMovieDetails(movie)">
+        <img [src]="movie.posterPath" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <!-- <button class="btn btn-danger btn-block" [routerLink]="search">See details...</button> -->
+        </div>
+    </div>

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <input 
+                #query 
+                type="text" 
+                (keyup)="search(query.value)" 
+                class="form-control" 
+                placeholder="Search movie...">
+        </div>
+    </div>
+    <div class="card-columns text-dark mt-5">
+        <app-card *ngFor="let movie of movies" [movie]="movie" class="m5"></app-card>
+    </div>
+</div>
