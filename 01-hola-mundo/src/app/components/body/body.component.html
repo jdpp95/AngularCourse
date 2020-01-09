@@ -1,0 +1,26 @@
+<h1>Body component</h1>
+
+<div class="row">
+    <div class="col">
+        <h1>*ngIf</h1>
+        <hr>
+
+        <div *ngIf="show" class="card text-white bg-info mb-3" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">{{phrase.author}}</h5>
+                <p class="card-text">{{phrase.message}}</p>
+            </div>
+        </div>
+
+        <button (click)="show = !show" class="btn btn-outline-primary btn-block">Mostrar/Ocultar</button>
+    </div>
+
+    <div class=col>
+        <h1>*ngFor</h1>
+        <hr>
+
+        <ul class="list-group">
+            <li *ngFor="let char of characters; let i = index" class="list-group-item">{{i + 1}}. {{char}}</li>
+        </ul>
+    </div>
+</div>

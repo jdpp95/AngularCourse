@@ -1,0 +1,146 @@
+<div class="container main-container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{name}}</td>
+        <td>uppercase</td>
+        <td>{{name | uppercase}}</td>
+      </tr>
+      <tr>
+        <td>{{name}}</td>
+        <td>lowercase</td>
+        <td>{{name | lowercase}}</td>
+      </tr>
+      <tr>
+        <td>{{name}}</td>
+        <td>slice:3</td>
+        <td>{{name | slice:3}}</td>
+      </tr>
+      <tr>
+        <td>{{name}}</td>
+        <td>slice:0:3</td>
+        <td>{{name | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td>{{array}}</td>
+        <td>slice:1:5</td>
+        <td>{{array | slice:1:5}}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number:'3.0-0'</td>
+        <td>{{PI | number:'3.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number:'23.0-2'</td>
+        <td>{{PI | number:'2.0-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number:'.2-2'</td>
+        <td>{{PI | number:'.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{ a }}</td>
+        <td>percent</td>
+        <td>{{a | percent}}</td>
+      </tr>
+      <tr>
+        <td>{{ a }}</td>
+        <td>percent:'2.2-2'</td>
+        <td>{{a | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency</td>
+        <td>{{salary | currency}}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency:'COP'</td>
+        <td>{{salary | currency:'COP'}}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency:'COP':true</td>
+        <td>{{salary | currency:'COP':true}}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency:'COP':true:'4.0-0'</td>
+        <td>{{salary | currency:'COP':true:'4.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>{{ promiseValue }}</td>
+        <td>promiseValue</td>
+        <td>{{ promiseValue | async }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td> date </td>
+        <td>{{ date | date }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td> date:'medium' </td>
+        <td>{{ date | date:'medium' }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td> date:'MMMM - dd' </td>
+        <td>{{ date | date:'MMMM - dd' }}</td>
+      </tr>
+      <tr>
+        <td>{{ fullName }}</td>
+        <td> capitalized </td>
+        <td>{{ fullName | capitalized}}</td>
+      </tr>
+      <tr>
+          <td>{{ fullName }}</td>
+          <td> capitalized:'false' </td>
+          <td>{{ fullName | capitalized:false}}</td>
+        </tr>
+        <tr>
+            <td>{{ name }}</td>
+            <td>
+              password: {{enable}}
+              <br>
+              <button 
+                (click) = "enable = !enable"
+                type = "button"
+                class="btn btn-outline-primary">Enable/disable</button>
+            </td>
+            <td>{{ password | password:enable}}</td>
+          </tr>
+    </tbody>
+  </table>
+
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of array | slice:5:20"> {{item}}</li>
+  </ul>
+
+  <h4>JSON</h4>
+  <pre>
+    {{ hero | json }}
+  </pre>
+
+  <h4> Youtube <small>video</small></h4>
+  <hr>
+  <iframe width="560" height="315" [src]="video | domSafe:'https://www.youtube.com/embed/'"
+  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+
+</div>

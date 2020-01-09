@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" 
+                [routerLink] = "['new']" routerLinkActive = "routerLinkActive">Nuevo</button>
+            <button type="button" class="btn btn-secondary" 
+                [routerLink] = "['edit']" routerLinkActive = "routerLinkActive">Editar</button>
+            <button type="button" class="btn btn-secondary" 
+                [routerLink] = "['details']" routerLinkActive = "routerLinkActive">Detalle</button>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
